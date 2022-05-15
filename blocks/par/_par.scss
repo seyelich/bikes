@@ -1,0 +1,9 @@
+.par {
+  @include font-p-desk();
+}
+
+@media screen and (max-width: $mob) {
+  .par {
+    @include font-p-mob();
+  }
+}

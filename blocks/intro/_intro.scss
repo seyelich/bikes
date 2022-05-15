@@ -1,0 +1,162 @@
+.intro {
+  display: flex;
+  margin-left: $section-margin-desk;
+  &_size_mob {
+    display: none;
+  }
+  &__main-info {
+    @include columns();
+    max-width: 460px;
+    height: inherit;
+    margin: 80px 50px 0 0;
+    gap: 50px;
+  }
+  &__button {
+    @include button-unstyled();
+    margin-top: 50px;
+    width: 180px;
+    height: 50px;
+    background-color: #24B47E;
+    background-image: linear-gradient(#319E75, #319E75);
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    background-size: 0% 100%;
+    transition: background-size .5s;
+    border-radius: 4px;
+    font-weight: $semi-bold;
+    font-size: $size-button-desk;
+    line-height: $size-p-desk;
+    letter-spacing: 1px;
+    text-align: center;
+    color: $white;
+    cursor: pointer;
+  }
+  &__button:hover {
+    background-size: 100% 100%;
+  }
+  &__bike-name {
+    @include cross-centered();
+    margin: 167px 0 0 0;
+    gap: 30px;
+    font-size: $size-p-desk;
+    line-height: $size-p-desk;
+  }
+  &__pic-container {
+    margin-top: 20px;
+    padding-left: 100px;
+    position: relative;
+  }
+  &__bg {
+    @include img-contain();
+    display: block;
+  }
+  &__sticky-container {
+    width: 100%;
+    height: 430px;
+    position: absolute;
+    bottom: 79px;
+    right: 0;
+  }
+  &__bike-img-container {
+    padding: 20px 50px;
+    width: fit-content;
+    background: $bg-color-primary;
+    border-radius: 20px;
+    filter: drop-shadow(-20px 60px 220px rgba(0, 0, 0, 0.2));
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+  &__bike-img {
+    @include img-contain();
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .intro {
+    &__pic-container {
+      padding-left: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: $desk) {
+  .intro {
+    &__main-info {
+      width: 50%;
+      justify-content: space-between;
+    }
+    &__pic-container {
+      padding-left: 100px;
+    }
+    &__bike-name {
+      display: none;
+    }
+    &__sticky-container {
+      height: 50%;
+    }
+    &__bike-img-container {
+      padding: 10.67px 26.59px;
+      width: 50%;
+    }
+    &__button {
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .intro {
+    &__main-info {
+      gap: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .intro {
+    display: none;
+    &_size_mob {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin: 40px 0 0 0;
+    }
+    &__main-info {
+      @include columns();
+      @include section-mob(40px);
+      width: 100%;
+      margin: 0;
+    }
+    &__pic-container {
+      margin-top: 0;
+      padding-left: 100px;
+    }
+    &__sticky-container {
+      height: fit-content;
+      position: absolute;
+      bottom: 37px;
+      right: 0;
+    }
+    &__button {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $mob) {
+  .intro {
+    &__pic-container {
+      padding-left: 30px;
+    }
+    &__button {
+      font-size: $size-button-mob;
+      line-height: $line-button-mob;
+    }
+    &__bike-img-container {
+      width: 234px;
+      box-sizing: border-box;
+    }
+  }
+}

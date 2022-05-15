@@ -1,0 +1,114 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 80px $section-margin-desk 60px $section-margin-desk;
+  background: #EFEFEF;
+  &__content {
+    width: 360px;
+  }
+  &__title {
+    max-width: 229px;
+    margin: 0 0 50px 0;
+    font-weight: $semi-bold;
+    font-size: $size-footer-desk;
+    line-height: $size-title-mob;
+  }
+  &__form {
+    position: relative;
+    margin-bottom: 100px;
+  }
+  &__input {
+    @include font-input();
+    width: 100%;
+    padding: 11px 20px;
+    box-sizing: border-box;
+    background-color: inherit;
+    border: 1px solid rgba(199, 199, 199, 0.5);
+    border-radius: 4px;
+    //cursor: pointer;
+  }
+  &__input::placeholder {
+    @include font-input();
+    transition: opacity .2s linear;
+    opacity: 0.7;
+  }
+  &__input:focus {
+    outline: none;
+  }
+  &__input:hover::placeholder {
+    color: $black;
+    opacity: 1;
+  }
+  &__input:focus::placeholder {
+    visibility: hidden;
+  }
+  &__submit-button {
+    @include button-unstyled();
+    @include font-input();
+    background: none;
+    position: absolute;
+    top: 11px;
+    right: 22px;
+    visibility: hidden;
+    &_visible {
+      visibility: visible;
+    }
+  }
+  &__message {
+    @include font-input();
+    margin: 0;
+    position: absolute;
+    top: 11px;
+    left: 20px;
+    visibility: hidden;
+    &_visible {
+      visibility: visible;
+    }
+  }
+  &__copyright {
+    margin: 0;
+    font-weight: $semi-bold;
+    font-size: $size-button-desk;
+    line-height: $line-cp;
+    color: $copy-right;
+  }
+  &__logo {
+    display: none;
+  }
+  &__switcher {
+    margin: 8px 2.65px 6px 0;
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .footer {
+    padding: 60px 40px 19px 40px;
+    &__content {
+      width: 100%;
+    }
+    &__title {
+      max-width: 100%;
+      margin: 0 0 40px 0;
+    }
+    &__form {
+      margin-bottom: 99px;
+    }
+    &__copyright-container {
+      @include cross-centered();
+      justify-content: space-between;
+    }
+    &__logo {
+      display: block;
+    }
+    &__switcher {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $mob) {
+  .footer {
+    padding: 60px 18px 19px 18px;
+  }
+}
