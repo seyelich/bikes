@@ -1,0 +1,69 @@
+.header {
+  @include columns();
+  justify-content: center;
+  min-height: 74px;
+  padding-right: $section-margin-desk;
+  box-sizing: border-box;
+  position: sticky;
+  left: 0;
+  top: 0;
+  background-color: inherit;
+  z-index: 2;
+  &_size_mob {
+    display: none;
+  }
+  &__nav {
+    align-self: flex-end;
+  }
+  &__list {
+    @include list-unstyled();
+    display: flex;
+    gap: 34px;
+  }
+  &__list-item {
+    font-weight: $medium;
+    font-size: $size-button-desk;
+    line-height: $size-p-desk;
+  }
+  &__button {
+    @include button-unstyled();
+    width: 22px;
+    height: 19px;
+    background-image: url(../images/open-icon.svg);
+    background-position: center;
+    background-color: inherit;
+    align-self: flex-end;
+    margin: 20px 18px 26px 0;
+    &_clicked {
+      background-image: url(../images/close-icon.svg);
+    }
+  }
+  &__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin: 70px 0 36px 0;
+    justify-content: space-between;
+    &_visible {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .header {
+    display: none;
+    padding-right: 0;
+    &_size_mob {
+      display: flex;
+    }
+    &__nav {
+      align-self: center;
+    }
+    &__list {
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+  }
+}

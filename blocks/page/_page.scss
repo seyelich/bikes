@@ -1,0 +1,88 @@
+.page {
+  max-width: 1440px;
+  margin: auto;
+  position: relative;
+  background-color: $bg-color-primary;
+  font-family: Inter, Arial, sans-serif;
+  color: $black;
+  &_theme_dark {
+    background-color: $bg-color-dark;
+    color: $white;
+    & .header__button-img {
+      stroke: $white;
+    }
+    & .intro__line {
+      fill: #707070;
+    }
+    & .link {
+      color: $white;
+      &:hover {
+        opacity: .65;
+      }
+    }
+    & .par, .quote__about, .bikes__menu-button {
+      color: #E5E5E5;
+    }
+    & .footer {
+      background-color: #2F2F2F;
+      &__input {
+        border: 1px solid rgba(125, 125, 125, 0.5);
+        color: $white;
+        &:hover::placeholder, &::placeholder {
+          color: $white;
+        }
+      }
+      &__submit-button {
+        color: $white;
+      }
+      &__copyright {
+        color: #565656;
+      }
+      &__logo-sign {
+        stroke: $white;
+      }
+    }
+    & .bikes {
+      &__menu {
+        background-color: $bg-color-dark;
+      }
+      &__menu-button{
+        &_active {
+          color: $white
+        }
+        &:hover {
+          opacity: .5;
+        }
+        &_active:hover {
+          opacity: .65;
+        }
+      }
+      &__button-icon {
+        stroke: $white;
+      }
+      &_type_mob {
+        color: $black;
+      }
+    }
+    & .switcher {
+      &__button {
+        background-color: #545454;;
+      }
+      &__sign {
+        fill: #676767;
+      }
+    }
+    & .gradients {
+      &__button {
+        background-color: #434343;
+        &:hover {
+          opacity: .6;
+        }
+      }
+      &__arrow {
+        stroke: $white;
+      }
+    }
+  }
+}
+

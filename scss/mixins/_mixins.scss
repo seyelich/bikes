@@ -1,0 +1,73 @@
+@mixin font-title-desk() {
+  margin: 0;
+  letter-spacing: $spacing;
+  font-size: $size-title-desk;
+  line-height: $line-title-desk;
+}
+
+@mixin font-title-mob() {
+  font-size: $size-title-mob;
+  line-height: $line-title-mob;
+}
+
+@mixin font-p() {
+  margin: 0;
+  color: $grey;
+  opacity: .7;
+}
+
+@mixin font-p-desk() {
+  @include font-p();
+  font-size: $size-p-desk;
+  line-height: $line-p-desk;
+}
+
+@mixin font-p-mob() {
+  font-size: $size-p-mob;
+  line-height: $size-p-desk;
+}
+
+@mixin font-input() {
+  font-weight: $medium;
+  font-size: $size-button-mob;
+  line-height: $line-p-desk;
+}
+
+@mixin link-unstyled() {
+  color: $black;
+  text-decoration: none;
+}
+
+@mixin list-unstyled() {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+@mixin button-unstyled() {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+@mixin columns() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin cross-centered() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin img-contain() {
+  width: 100%;
+  object-fit: contain;
+}
+
+@mixin section-mob($gap) {
+  margin: 0;
+  padding-top: 40px;
+  border-top: 1px solid #E3E3E3;
+  gap: $gap;
+}

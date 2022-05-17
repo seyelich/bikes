@@ -1,0 +1,63 @@
+.quote {
+  margin: 0 $section-margin-desk;
+  display: grid;
+  grid-template-columns:  minmax(200px, 650px) minmax(min-content, 470px);
+  gap: 80px;
+  &__img {
+    @include img-contain();
+  }
+  &__text {
+    @include columns();
+    justify-content: space-between;
+  }
+  &__title {
+    margin: 0;
+    font-weight: $semi-bold;
+    font-size: $size-quote-desk;
+    line-height: $line-quote-desk;
+    letter-spacing: $spacing;
+  }
+  &__author {
+    margin: 0;
+    font-weight: $medium;
+    font-size: $line-cp;
+    line-height: $size-title-mob;
+  }
+  &__about {
+    @include font-p();
+    margin: 6px 0 0 0;
+    font-size: $size-about;
+    line-height: $line-p-desk;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .quote {
+    @include columns();
+    @include section-mob(40px);
+    padding-top: 20px;
+    &__text {
+      gap: 40px;
+    }
+    &__about {
+      margin: 4px 0 0 0;
+    }
+  }
+}
+
+@media screen and (max-width: $mob) {
+  .quote {
+    &__title {
+      font-size: $size-quote-mob;
+      line-height: $line-quote-mob;
+    }
+    &__author {
+      font-size: $size-button-desk;
+      line-height: $line-name-desk;
+    }
+    &__about {
+      font-size: $line-about-mob;
+      line-height: $size-about;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.gradients {
+  margin-left: $section-margin-desk;
+  &_type_mob {
+    display: none;
+  }
+  &__cards {
+    @include list-unstyled();
+    margin: 0 0 50px 0;
+    display: flex;
+    gap: 40px;
+    overflow: hidden;
+  }
+  &__card {
+    @include columns();
+    min-width: 650px;
+    justify-content: space-between;
+  }
+  &__title {
+    margin-bottom: 50px;
+    max-width: 460px;
+    &_hidden {
+      opacity: 0;
+    }
+  }
+  &__par {
+    margin-bottom: 80px;
+    max-width: 460px;
+    &_hidden {
+      opacity: 0;
+    }
+  }
+  &__img {
+    @include img-contain();
+    display: block;
+  }
+  &__img-container {
+    position: relative;
+  }
+  &__icon {
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    z-index: 1;
+    &_hidden {
+      opacity: 0;
+    }
+  }
+  &__icon_hidden, &__title_hidden, &__paragraph_hidden {
+    visibility: hidden;
+  }
+  &__buttons {
+    display: flex;
+  }
+  &__button {
+    @include button-unstyled();
+    width: 50px;
+    height: 50px;
+    background: $arrow-bg;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    box-sizing: border-box;
+    transition: opacity .2s linear;
+    &:hover {
+      opacity: .75;
+    }
+    &:last-of-type {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .gradients {
+    display: none;
+    &_type_mob {
+      display: flex;
+      @include section-mob(40px);
+    }
+    &__cards {
+      margin: 0;
+    }
+    &__card {
+      @include columns();
+      min-width: 100%;
+      gap: 40px;
+    }
+    &__title, &__par {
+      max-width: 100%;
+      margin-bottom: 0;
+    }
+    &__buttons-container {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (max-width: $mob) {
+  .gradients {
+    &__button {
+      width: 24px;
+      height: 24px;
+      border-radius: 30px;
+    }
+    &__button:last-of-type {
+      margin-left: 10px;
+    }
+    &__icon {
+      bottom: 14px;
+    }
+  }
+}

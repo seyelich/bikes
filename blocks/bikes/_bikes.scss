@@ -1,0 +1,171 @@
+.bikes {
+  margin: 0 $section-margin-desk;
+  &__text {
+    @include cross-centered();
+    justify-content: space-between;
+  }
+  &__menu-container {
+    display: none;
+  }
+  &__menu {
+    @include list-unstyled();
+    display: flex;
+    gap: 40px;
+  }
+  &__menu-button {
+    @include font-p();
+    @include button-unstyled();
+    font-size: $size-p-desk;
+    line-height: $line-p-desk;
+    background: none;
+    transition: opacity .2s linear;
+    &_active {
+      opacity: 1;
+      font-weight: $semi-bold;
+      color: $black;
+    }
+    &:hover {
+      opacity: .6;
+    }
+    &_active:hover {
+      opacity: .75;
+    }
+  }
+  &__cards {
+    @include list-unstyled();
+    margin-top: $section-margin-desk;
+    display: none;
+    gap: 30px;
+      &_visible {
+      display: flex;
+    }
+  }
+  &__card {
+    @include columns();
+    &_hidden {
+      display: none;
+    }
+    &:nth-of-type(2), &:nth-of-type(3) {
+      display: flex;
+    }
+  }
+  &__link {
+    @include link-unstyled();
+    display: flex;
+    height: 100%;
+    max-width: 380px;
+    background: $bg-color-primary;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    filter: drop-shadow(0px 20px 140px rgba(0, 0, 0, 0.06));
+  }
+  &__img {
+    @include img-contain();
+  }
+  &__name {
+    font-weight: $semi-bold;
+    font-size: $size-p-desk;
+    line-height: $line-name-desk;
+    margin: 22px 0 0 0;
+  }
+  &__points {
+    display: none;
+  }
+}
+
+@media screen and(max-width: $tablet) {
+  .bikes {
+    @include columns();
+    @include section-mob(0);
+    &__text {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__menu {
+      display: none;
+      &_opened {
+        @include columns();
+        width: inherit;
+        background-color: $bg-color-primary;
+        border: 1px solid $menu-border;
+        border-radius: 2px;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 1;
+        gap: 20px;
+        padding: 8px 12px;
+      }
+    }
+    &__menu-container {
+      @include columns();
+      position: relative;
+      border: 1px solid $menu-border;
+      border-radius: 2px;
+      width: 114px;
+      box-sizing: border-box;
+      padding: 7px 12px;
+      margin-top: 40px;
+    }
+    &__button-container {
+      @include cross-centered();
+      justify-content: space-between;
+    }
+    &__open-button {
+      @include button-unstyled();
+      display: flex;
+      justify-content: center;
+      background-color: inherit;
+    }
+    &__menu-button, &__gradient {
+      margin: 0;
+    }
+    &__gradient {
+      font-weight: $semi-bold;
+      font-size: $size-p-desk;
+      line-height: $line-p-desk;
+    }
+    &__cards{
+      margin-top:0;
+    }
+    &__card {
+      margin: 20px auto 0 auto;
+      background: $bg-color-primary;
+      border-radius: 20px;
+      filter: drop-shadow(0px 20px 140px rgba(0, 0, 0, 0.06));
+      padding: 14.95px 14.95px 16px 14.95px;
+      box-sizing: border-box;
+      &:nth-of-type(2), &:nth-of-type(3) {
+        display: none;
+      }
+    }
+    &__link {
+      filter: none;
+      padding: 0;
+    }
+    &__name {
+      margin: 2.95px 0 0 0;
+      text-align: center;
+      color: $black;
+    }
+    &__points {
+      display: block;
+      margin: 20px auto 0 auto;
+    }
+  }
+}
+
+@media screen and(max-width: $mob) {
+  .bikes {
+    &__menu-button, &__gradient {
+      font-weight: $semi-bold;
+      font-size: $size-menu-button;
+      line-height: $size-button-desk;
+    }
+    &__name {
+      font-size: $size-button-desk;
+      line-height: $size-p-desk;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.title {
+  @include font-title-desk();
+}
+
+@media screen and (max-width: $mob) {
+  .title {
+    @include font-title-mob();
+  }
+}

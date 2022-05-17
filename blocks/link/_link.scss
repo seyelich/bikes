@@ -1,0 +1,7 @@
+.link {
+  @include link-unstyled();
+  transition: opacity .2s linear;
+  &:hover {
+    opacity: .75;
+  }
+}
