@@ -38,6 +38,7 @@ const gradientsCardsArr = [
 headerButton.addEventListener('click', () => {
   headerButton.classList.toggle('header__button_clicked')
   headerMenu.classList.toggle('header__menu_visible');
+  headerMenu.style.height = document.documentElement.clientHeight - 180 + 'px';
 });
 
 document.addEventListener('click', (e) => {
@@ -234,23 +235,8 @@ document.addEventListener('click', (e) => {
         break;
     }
     bikesMenu.classList.remove('bikes__menu_opened');
-    getVisibleContainer();
   }
 });
-
-function getVisibleContainer() {
-  const bikesVisibleContainer = document.querySelector('.bikes__cards_visible');
-  if (document.documentElement.scrollWidth <= 768) {
-    bikesVisibleContainer.querySelectorAll('.bikes__card')[1].classList.add('bikes__card_hidden');
-    bikesVisibleContainer.querySelectorAll('.bikes__card')[2].classList.add('bikes__card_hidden');
-  }
-  else {
-    bikesVisibleContainer.querySelectorAll('.bikes__card')[1].classList.remove('bikes__card_hidden');
-    bikesVisibleContainer.querySelectorAll('.bikes__card')[2].classList.remove('bikes__card_hidden');
-  }
-}
-
-getVisibleContainer();
 
 document.addEventListener('click', e => {
   if (document.documentElement.scrollWidth <= 768) {

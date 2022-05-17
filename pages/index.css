@@ -174,7 +174,7 @@
   background-color: inherit;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  margin: 26px 18px 26px 0;
+  margin: 20px 18px 26px 0;
 }
 
 .header__button_clicked {
@@ -190,7 +190,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
   margin: 70px 0 36px 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -355,7 +354,6 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  margin-top: 50px;
   width: 180px;
   height: 50px;
   background-color: #24B47E;
@@ -387,7 +385,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 167px 0 0 0;
+  margin: 117px 0 0 0;
   gap: 30px;
   font-size: 18px;
   line-height: 18px;
@@ -517,6 +515,7 @@
   .intro__button {
     width: 100%;
     margin-top: 0;
+    height: 46px;
   }
 }
 
@@ -627,7 +626,7 @@
 }
 
 .gradients {
-  margin: 60px 0 0 120px;
+  margin-left: 120px;
 }
 
 .gradients_type_mob {
@@ -662,6 +661,7 @@
 
 .gradients__title {
   margin-bottom: 50px;
+  max-width: 460px;
 }
 
 .gradients__title_hidden {
@@ -670,6 +670,7 @@
 
 .gradients__par {
   margin-bottom: 80px;
+  max-width: 460px;
 }
 
 .gradients__par_hidden {
@@ -759,6 +760,7 @@
     gap: 40px;
   }
   .gradients__title, .gradients__par {
+    max-width: 100%;
     margin-bottom: 0;
   }
   .gradients__buttons-container {
@@ -876,6 +878,12 @@
   display: none;
 }
 
+.bikes__card:nth-of-type(2), .bikes__card:nth-of-type(3) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .bikes__link {
   color: #151515;
   text-decoration: none;
@@ -967,7 +975,9 @@
     border: 1px solid #E3E3E3;
     border-radius: 2px;
     width: 114px;
-    padding: 8px 12px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 7px 12px;
     margin-top: 40px;
   }
   .bikes__button-container {
@@ -1013,6 +1023,9 @@
     padding: 14.95px 14.95px 16px 14.95px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+  }
+  .bikes__card:nth-of-type(2), .bikes__card:nth-of-type(3) {
+    display: none;
   }
   .bikes__link {
     -webkit-filter: none;
@@ -1119,6 +1132,9 @@
     border-top: 1px solid #E3E3E3;
     gap: 40px;
     margin-bottom: 60px;
+  }
+  .trainings__links {
+    margin: 0;
   }
   .trainings__par {
     margin: 0;
@@ -1315,7 +1331,7 @@
     margin: 0 0 40px 0;
   }
   .footer__form {
-    margin-bottom: 99px;
+    margin-bottom: 90px;
   }
   .footer__copyright-container {
     display: -webkit-box;

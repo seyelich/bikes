@@ -13,7 +13,6 @@
   }
   &__button {
     @include button-unstyled();
-    margin-top: 50px;
     width: 180px;
     height: 50px;
     background-color: #24B47E;
@@ -36,7 +35,7 @@
   }
   &__bike-name {
     @include cross-centered();
-    margin: 167px 0 0 0;
+    margin: 117px 0 0 0;
     gap: 30px;
     font-size: $size-p-desk;
     line-height: $size-p-desk;
@@ -141,6 +140,7 @@
     &__button {
       width: 100%;
       margin-top: 0;
+      height: 46px;
     }
   }
 }
